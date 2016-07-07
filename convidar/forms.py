@@ -40,16 +40,3 @@ class ReservationForm(forms.ModelForm):
                 Submit("submit", _("Save")),
             )
         )
-
-
-'''
-class CustomResetPasswordForm(ResetPasswordForm):
-    def __init__(self, *args, **kwargs):
-        super(CustomResetPasswordForm, self).__init__(*args, **kwargs)
-
-        self.helper = FormHelper(self)
-        self.helper.layout = Layout(
-            Field('email', css_class='input-small', type='email'),
-            FormActions(Submit('submit', 'Submit'))
-        )
-'''
