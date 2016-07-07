@@ -6,14 +6,14 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, ButtonHolder, Submit
 from crispy_forms import bootstrap,  layout
 
-class ReservationForm(forms.Form):
+class ReservationForm(forms.ModelForm):
     class Meta:
         model = Reservation
         fields = ["acceptation", "firstname", "lastname",
                 "telephone", "accompagnement", "notes"]
 
     def __init__(self, *args, **kwargs):
-        super(ReservationForm, self).__init__(*args, **kwargs)
+        super(ReservationForm,self).__init__(*args, **kwargs)
 
 
         self.helper = FormHelper(self)
@@ -21,12 +21,13 @@ class ReservationForm(forms.Form):
         self.helper.form_method = "POST"
         self.fields["acceptation"].widget = forms.RadioSelect()
         # delete empty choice for the type
-        del self.fields["acceptation"].choices[0]
+        del self.fields["acceptation"]#.choices[0]
 
         self.helper.layout = layout.Layout(
             layout.Fieldset(
                 _("Main data"),
-                layout.Field("acceptation"),
+                PrependedText('acceptation', ''),
+                Field("acceptation"),
                 _("Renseignement"),
                 layout.Field("firstname", css_class="input-block-level"),
                 layout.Field("lastname", css_class="input-block-level"),
