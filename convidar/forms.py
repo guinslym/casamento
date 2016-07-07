@@ -16,7 +16,7 @@ class ReservationForm(forms.Form):
         super(ReservationForm, self).__init__(*args, **kwargs)
 
 
-        self.helper = FormHelper()
+        self.helper = FormHelper(self)
         self.helper.form_action = ""
         self.helper.form_method = "POST"
         self.fields["acceptation"].widget = forms.RadioSelect()
