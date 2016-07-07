@@ -10,7 +10,7 @@ from crispy_forms.bootstrap import Field, FormActions
 #from captcha.fields import ReCaptchaField
 
 
-class ReservationForm(forms.ModelForm):
+class ReservationModelForm(forms.ModelForm):
     class Meta:
         model = Reservation
         fields = ["acceptation", "firstname", "lastname",
