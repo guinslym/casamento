@@ -27,14 +27,14 @@ class ReservationForm(forms.Form):
             layout.Fieldset(
                 _("Main data"),
                 layout.Field("acceptation"),
+                _("Renseignement"),
                 layout.Field("firstname", css_class="input-block-level"),
                 layout.Field("lastname", css_class="input-block-level"),
                 layout.Field("telephone", css_class="input-block-level"),
                 layout.Field("accompagnement", css_class="input-block-level"),
                 layout.Field("notes", css_class="input-block-level", rows="3"),
             ),
-            ButtonHolder(
-                    Submit('reservation', 'Reservation',
-                    css_class='btn-primary')
-                )
+            bootstrap.FormActions(
+                layout.Submit("submit", _("Save")),
+            )
         )
