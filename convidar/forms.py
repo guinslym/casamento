@@ -28,16 +28,16 @@ class ReservationForm(forms.ModelForm):
         self.helper.layout = layout.Layout(
             layout.Fieldset(
                 _("Main data"),
-                layout.Field("acceptation", css_class="input-block-level"),
+                Field("acceptation", css_class="input-block-level"),
                 _("Renseignement"),
-                layout.Field("firstname", css_class="input-block-level"),
-                layout.Field("lastname", css_class="input-block-level"),
-                layout.Field("telephone", css_class="input-block-level"),
-                layout.Field("accompagnement", css_class="input-block-level"),
-                layout.Field("notes", css_class="input-block-level", rows="3"),
+                Field("firstname", css_class="input-block-level"),
+                Field("lastname", css_class="input-block-level"),
+                Field("telephone", css_class="input-block-level"),
+                Field("accompagnement", css_class="input-block-level"),
+                Field("notes", css_class="input-block-level", rows="3"),
             ),
             FormActions(
-                layout.Submit("submit", _("Save")),
+                Submit("submit", _("Save")),
             )
         )
 
