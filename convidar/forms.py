@@ -38,3 +38,14 @@ class ReservationForm(forms.Form):
                 layout.Submit("submit", _("Save")),
             )
         )
+
+from crispy_forms.bootstrap import Field, FormActions
+class CustomResetPasswordForm(ResetPasswordForm):
+    def __init__(self, *args, **kwargs):
+        super(CustomResetPasswordForm, self).__init__(*args, **kwargs)
+
+        self.helper = FormHelper(self)
+        self.helper.layout = Layout(
+            Field('email', css_class='input-small', type='email'),
+            FormActions(Submit('submit', 'Submit'))
+        )

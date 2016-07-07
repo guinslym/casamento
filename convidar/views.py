@@ -6,5 +6,10 @@ from .forms import ReservationForm
 # Create your views here.
 
 class ReservationCreateView(CreateView):
-    model = Author
-    fields = ['name']
+    form_class = ReservationForm
+    success_url =  '/'
+    model = Reservation
+    template_name_suffix = '_create'
+
+    def form_valid(self, form):
+        return super(ReservationCreateView, self).form_valid(form)

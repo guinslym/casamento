@@ -5,5 +5,9 @@ from django.conf.urls import patterns, url
 from django.views.generic import TemplateView
 
 urlpatterns = patterns('',
-    #url(r'^$', 'bulletin_board.views.add_bulletin', name="add_bulletin"),
+    url(r'^create/$', 'convidar.views.ReservationCreateView', name="add_invitation"),
+    url(r'^$',
+        TemplateView.as_view(template_name='partials/locstructure.html'),
+        name="add_invitation"),
+
 )
