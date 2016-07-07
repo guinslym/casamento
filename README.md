@@ -1,6 +1,6 @@
 side project to learn Django Forms
 
-`nconvidar/forms.py`
+`convidar/forms.py`
 
 
 ###urls
