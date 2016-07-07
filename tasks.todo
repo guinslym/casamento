@@ -1,0 +1,4 @@
+todo:
+ ☐ Redo the same form with forms.Form and send email
+ ☐ Redo the same form with the normal Django form
+ ☐ Find a way to deal with Boolean Choice with crispy_forms for forms.Models.
