@@ -8,7 +8,6 @@ from .forms import ReservationForm
 class ReservationCreateView(CreateView):
     form_class = ReservationForm
     success_url =  '/'
-    model = Reservation
     template_name_suffix = '_create'
 
     def form_valid(self, form):

@@ -4,7 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 from .models import Reservation
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, ButtonHolder, Submit
-from crispy_forms import bootstrap, Field, layout
+from crispy_forms import bootstrap,  layout
 
 class ReservationForm(forms.Form):
     class Meta:
@@ -39,7 +39,9 @@ class ReservationForm(forms.Form):
             )
         )
 
+
 from crispy_forms.bootstrap import Field, FormActions
+'''
 class CustomResetPasswordForm(ResetPasswordForm):
     def __init__(self, *args, **kwargs):
         super(CustomResetPasswordForm, self).__init__(*args, **kwargs)
@@ -49,3 +51,4 @@ class CustomResetPasswordForm(ResetPasswordForm):
             Field('email', css_class='input-small', type='email'),
             FormActions(Submit('submit', 'Submit'))
         )
+'''
