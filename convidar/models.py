@@ -17,14 +17,14 @@ class Reservation(TimeStampedModel):
     )
 
     acceptation = models.CharField(_("acceptation"),
-        max_length=10, 
-        help_text=_("Do you accept the invitation to come"),
-        choices=TYPE_CHOICES)
+                            max_length=10,
+                            help_text=_("Do you accept the invitation to come"),
+                            choices=TYPE_CHOICES)
     firstname = models.CharField(_("firstname"),
                         help_text=_("Your Firstname"),
                         max_length=50,
                         default="Your Firstname")
-    lastname = models.CharField(_("firstname"),
+    lastname = models.CharField(_("lastname"),
                         help_text=_("Your Lastname"),
                         max_length=50,
                         default="Your Lastname")

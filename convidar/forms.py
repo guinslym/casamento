@@ -4,7 +4,9 @@ from django.utils.translation import ugettext_lazy as _
 from .models import Reservation
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, ButtonHolder, Submit
-from crispy_forms import bootstrap,  layout
+from crispy_forms import layout
+from crispy_forms.bootstrap import Field, FormActions
+
 
 class ReservationForm(forms.ModelForm):
     class Meta:
@@ -21,13 +23,12 @@ class ReservationForm(forms.ModelForm):
         self.helper.form_method = "POST"
         self.fields["acceptation"].widget = forms.RadioSelect()
         # delete empty choice for the type
-        del self.fields["acceptation"]#.choices[0]
+        del self.fields["acceptation"].choices[0]
 
         self.helper.layout = layout.Layout(
             layout.Fieldset(
                 _("Main data"),
-                PrependedText('acceptation', ''),
-                Field("acceptation"),
+                layout.Field("acceptation", css_class="input-block-level"),
                 _("Renseignement"),
                 layout.Field("firstname", css_class="input-block-level"),
                 layout.Field("lastname", css_class="input-block-level"),
@@ -35,13 +36,12 @@ class ReservationForm(forms.ModelForm):
                 layout.Field("accompagnement", css_class="input-block-level"),
                 layout.Field("notes", css_class="input-block-level", rows="3"),
             ),
-            bootstrap.FormActions(
+            FormActions(
                 layout.Submit("submit", _("Save")),
             )
         )
 
 
-from crispy_forms.bootstrap import Field, FormActions
 '''
 class CustomResetPasswordForm(ResetPasswordForm):
     def __init__(self, *args, **kwargs):
