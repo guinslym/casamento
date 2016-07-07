@@ -39,9 +39,21 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django_extensions',
     'crispy_forms',
+    'captcha',
     'convidar',
 )
 CRISPY_TEMPLATE_PACK = "bootstrap3"
+#RECAPTCHA_PUBLIC_KEY = get_env_variable('RECAPTCHA_PUBLIC_KEY')
+#RECAPTCHA_PRIVATE_KEY = get_env_variable('RECAPTCHA_PRIVATE_KEY')
+#NOCAPTCHA = True
+
+ADMINS = [('Guinsly', 'sdfasdfs@gmail.com')]
+
+EMAIL_USE_SSL = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 465
+#EMAIL_HOST_USER = get_env_variable('EMAIL_HOST_USER')
+#EMAIL_HOST_PASSWORD = get_env_variable('EMAIL_HOST_PASSWORD')
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
