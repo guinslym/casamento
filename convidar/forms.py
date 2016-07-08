@@ -8,6 +8,14 @@ from crispy_forms import layout
 from crispy_forms.bootstrap import Field, FormActions
 
 #from captcha.fields import ReCaptchaField
+###########################################################
+###########################################################
+###########################################################
+###########################################################
+###########################################################
+###########################################################
+###########################################################
+###########################################################
 
 
 class ReservationCrispyFormModelForm(forms.ModelForm):
@@ -44,7 +52,11 @@ class ReservationCrispyFormModelForm(forms.ModelForm):
                 )
         )
 
-
+###########################################################
+###########################################################
+###########################################################
+###########################################################
+###########################################################
 
 from django.forms import ModelForm, EmailInput
 
@@ -78,9 +90,14 @@ class ReservationDjangoBootstrapFormModelForm(forms.Form):
                 Enter atleast 10 words''')
 
         return notes #Returns the same message so that we could modify it.
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
 
-
-class ReservationCrispyFormModelFormWithHelperTextAndLabels(ModelForm):
+class ReservationCrispyFormModelFormWithHelperTextAndLabels(forms.Form):
     """
         Don't really looks at the content like 'If you disable this, Kaniwani..'
         The most important thing is the use of 'help_texts' and 'labels'

@@ -4,7 +4,8 @@ from django.views.generic import TemplateView
 from .models import Reservation
 from .forms import (
         ReservationCrispyFormModelForm,
-        ReservationDjangoBootstrapFormModelForm
+        ReservationDjangoBootstrapFormModelForm,
+        ReservationCrispyFormModelFormWithHelperTextAndLabels
         )
 # Create your views here.
 
