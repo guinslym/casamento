@@ -5,6 +5,7 @@ todo:
  ✔ Try with https://github.com/tzangms/django-bootstrap-form @done(2016-07-08 01:58) @project(todo)
  ☐ Add tests
  ✔ Use file uploads @done(2016-07-08 03:07) @project(todo)
+ ✔ Add the django API documentation (django_docs) @done(2016-07-08 03:11) @project(todo)
  ☐ Create a simple html form that I will add the model label and fields into it
    ☐ https://docs.djangoproject.com/ja/1.9/topics/forms/#building-a-form
 
@@ -29,3 +30,4 @@ django-bootstrap-form:
 
 Helper Gist:
   ☐ https://gist.github.com/maraujop/1838193   for crispy_forms
+  ☐ django_docs
