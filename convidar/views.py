@@ -66,4 +66,4 @@ def add_bulletin(request):
         Dummy view to show the form with layout
     """
     form = BulletinForm()
-    return render(request, "bulletin_board/change_bulletin.html", {'form': form})
+    return render(request, "change_bulletin.html", {'form': form})

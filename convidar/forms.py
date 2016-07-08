@@ -202,7 +202,7 @@ class MessageForm(forms.Form):
 #######################################################
 
 from .models import Bulletin
-
+from crispy_forms import layout, bootstrap
 
 class BulletinForm(forms.ModelForm):
     """
