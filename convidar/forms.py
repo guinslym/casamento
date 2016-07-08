@@ -49,6 +49,7 @@ class ReservationCrispyFormModelForm(forms.ModelForm):
                 ),
                 FormActions(
                     Submit("submit", _("Save")),
+                    Button('cancel', 'Cancelar', onclick="window.location.href='/';")
                 )
         )
 

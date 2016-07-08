@@ -4,19 +4,22 @@ todo:
  ✔ Find a way to deal with Boolean Choice with crispy_forms for forms.Models. @done(2016-07-08 01:58) @project(todo)
  ✔ Try with https://github.com/tzangms/django-bootstrap-form @done(2016-07-08 01:58) @project(todo)
 
-
-django-bootstrap-form:
-  ☐ Don't use it there is no Documentation for it
-  ☐ It doesn't have required field (*)
-  ☐ Difficult to place a placeholder in it
-  ☐ Difficult to customize
-  ☐ Use only if the form is Dead simple and not for production
-
 crispy_forms:
   ☐ Best choice usually
+  ☐ A lots of customization
   ☐ I couldn't find a way to use the Boolean
 
 django_form:
   ☐ Easier to use
   ☐ Great with simple stuff
   ☐ Have widget (forms.Textarea)
+  ☐ It doesn't have required field (*)
+  ☐ Difficult to place a placeholder in it
+  ☐ Difficult to customize
+  ☐ Use only if the form is Dead simple and not for production
+
+django-bootstrap-form:
+  ☐ Don't use it there is no Documentation for it
+
+Helper Gist:
+  ☐ https://gist.github.com/maraujop/1838193   for crispy_forms
