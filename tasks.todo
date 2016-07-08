@@ -1,8 +1,8 @@
 todo:
  ☐ Redo the same form with forms.Form and send email
- ☐ Redo the same form with the normal Django form
- ☐ Find a way to deal with Boolean Choice with crispy_forms for forms.Models.
- ☐ Try with https://github.com/tzangms/django-bootstrap-form
+ ✔ Redo the same form with the normal Django form @done(2016-07-08 01:58) @project(todo)
+ ✔ Find a way to deal with Boolean Choice with crispy_forms for forms.Models. @done(2016-07-08 01:58) @project(todo)
+ ✔ Try with https://github.com/tzangms/django-bootstrap-form @done(2016-07-08 01:58) @project(todo)
 
 
 django-bootstrap-form:
@@ -11,3 +11,12 @@ django-bootstrap-form:
   ☐ Difficult to place a placeholder in it
   ☐ Difficult to customize
   ☐ Use only if the form is Dead simple and not for production
+
+crispy_forms:
+  ☐ Best choice usually
+  ☐ I couldn't find a way to use the Boolean
+
+django_form:
+  ☐ Easier to use
+  ☐ Great with simple stuff
+  ☐ Have widget (forms.Textarea)
