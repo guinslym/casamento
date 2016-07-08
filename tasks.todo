@@ -31,3 +31,15 @@ django-bootstrap-form:
 Helper Gist:
   ☐ https://gist.github.com/maraujop/1838193   for crispy_forms
   ☐ django_docs
+
+from django.forms.fields import __all__
+print(__all__)
+__all__ = (
+    'Field', 'CharField', 'IntegerField',
+    'DateField', 'TimeField', 'DateTimeField', 'DurationField',
+    'RegexField', 'EmailField', 'FileField', 'ImageField', 'URLField',
+    'BooleanField', 'NullBooleanField', 'ChoiceField', 'MultipleChoiceField',
+    'ComboField', 'MultiValueField', 'FloatField', 'DecimalField',
+    'SplitDateTimeField', 'GenericIPAddressField', 'FilePathField',
+    'SlugField', 'TypedChoiceField', 'TypedMultipleChoiceField', 'UUIDField',
+)
