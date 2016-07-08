@@ -43,4 +43,4 @@ def message_to_user(request):
     else:
         form = MessageForm(request)
 
-    return render(request, "email_messages/message_to_user.html", {"form": form})
+    return render(request, "message_to_user.html", {"form": form})
