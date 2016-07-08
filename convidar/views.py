@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, FormView
 from django.views.generic import TemplateView
 from django.shortcuts import render, redirect
 from .models import Reservation
@@ -57,6 +57,7 @@ def message_to_user(request):
 
 
 class MessageToUserFormView(FormView):
+    #https://github.com/stellasstar/tfgm/blob/master/findme/findme/views.py
     from django.conf import settings
     form_class = MessageForm
     template_name = 'message_to_user.html'

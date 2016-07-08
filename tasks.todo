@@ -15,6 +15,7 @@ crispy_forms:
   ☐ I couldn't find a way to use the Boolean
   ☐ Use layout.Fieldset to create section in the form
   ☐ Check the use of PrependText in BulletinForm (convidar/forms.py)
+  ☐ I couldn't use recaptcha
 
 django_form:
   ☐ Easier to use

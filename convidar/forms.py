@@ -203,6 +203,7 @@ class MessageForm(forms.Form):
 
 from .models import Bulletin
 from crispy_forms import layout, bootstrap
+from captcha.fields import ReCaptchaField
 
 class BulletinForm(forms.ModelForm):
     """
@@ -213,12 +214,15 @@ class BulletinForm(forms.ModelForm):
         model = Bulletin
         fields = ["bulletin_type", "title", "description", "contact_person", "phone", "email", "image"]
 
+    #this didn't work make be my google accreditation is not valid
+    captcha = ReCaptchaField(label=_('Antirobot'),required=True)
     def __init__(self, *args, **kwargs):
         super(BulletinForm, self).__init__(*args, **kwargs)
 
         self.helper = FormHelper()
         self.helper.form_action = ""
         self.helper.form_method = "POST"
+        #captcha = ReCaptchaField()
 
         self.fields["bulletin_type"].widget = forms.RadioSelect()
         # delete empty choice for the type
