@@ -4,9 +4,9 @@ side project to learn Django Forms
 
 
 ###urls
-  /create
-  /Bulletin
-  /
+    /create
+    /Bulletin
+    /
 
 
 
