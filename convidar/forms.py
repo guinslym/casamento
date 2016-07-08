@@ -7,6 +7,8 @@ from crispy_forms.layout import Layout, ButtonHolder, Submit
 from crispy_forms import layout
 from crispy_forms.bootstrap import Field, FormActions
 
+
+
 #from captcha.fields import ReCaptchaField
 ###########################################################
 ###########################################################
@@ -144,3 +146,47 @@ class ReservationCrispyFormModelFormWithHelperTextAndLabels(forms.Form):
                 raise ValidationError("API Key not associated with a WaniKani User!")
         print("cleaned api Key...")
         return api_key
+
+######################################################
+######################################################
+######################################################
+######################################################
+######################################################
+######################################################
+
+
+
+from django.core.mail import send_mail
+from django.contrib.auth.models import User
+
+class MessageForm(forms.Form):
+    """
+    The important is the 'save method' pour alléger le View
+    """
+    recipient = forms.ModelChoiceField(
+        label=_("Recipient"),
+        queryset=User.objects.all(),
+        required=True,
+    )
+    message = forms.CharField(
+        label=_("Message"),
+        widget=forms.Textarea,
+        required=True,
+    )
+
+    def __init__(self, request, *args, **kwargs):
+        super(MessageForm, self).__init__(*args, **kwargs)
+        self.request = request
+        #we exclude the current user because of the ModelChoiceField
+        #queryset=User.objects.all(),
+        self.fields["recipient"].queryset = self.fields["recipient"].queryset.exclude(pk=request.user.pk)
+
+    def save(self):
+        cleaned_data = self.cleaned_data
+        send_mail(
+            subject=ugettext("A message from %s") % self.request.user,
+            message=cleaned_data["message"],
+            from_email=self.request.user.email,
+            recipient_list=[cleaned_data["recipient"].email],
+            fail_silently=True,
+        )

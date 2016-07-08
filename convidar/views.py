@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView
 from django.views.generic import TemplateView
+from django.shortcuts import render, redirect
 from .models import Reservation
 from .forms import (
         ReservationCrispyFormModelForm,
         ReservationDjangoBootstrapFormModelForm,
-        ReservationCrispyFormModelFormWithHelperTextAndLabels
+        ReservationCrispyFormModelFormWithHelperTextAndLabels,
+        MessageForm
         )
 # Create your views here.
 
@@ -30,3 +32,15 @@ class Reservation3CreateView(CreateView):
 
     def form_valid(self, form):
         return super(Reservation3CreateView, self).form_valid(form)
+
+
+def message_to_user(request):
+    if request.method == "POST":
+        form = MessageForm(request, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("message_to_user_done")
+    else:
+        form = MessageForm(request)
+
+    return render(request, "email_messages/message_to_user.html", {"form": form})
