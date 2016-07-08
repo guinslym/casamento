@@ -18,6 +18,7 @@ urlpatterns = patterns('',
         {'template_name': "message_to_user_done.html"},
         name="message_to_user_done"
         ),
+    url(r'^bulletin$', 'convidar.views.add_bulletin', name="add_bulletin"),
     url(r'^$',
         TemplateView.as_view(template_name='hello.html'),
         name="add_invitation"),

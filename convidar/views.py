@@ -9,7 +9,7 @@ from .forms import (
         ReservationCrispyFormModelFormWithHelperTextAndLabels,
         MessageForm
         )
-# Create your views here.
+
 
 class ReservationCreateView(CreateView):
     form_class = ReservationCrispyFormModelForm
@@ -18,11 +18,17 @@ class ReservationCreateView(CreateView):
 
     def form_valid(self, form):
         return super(ReservationCreateView, self).form_valid(form)
+##################################
+##################################
+##################################
 
 def bootstrap(request):
     form = ReservationDjangoBootstrapFormModelForm()
 
     return render(request, 'bootstrap.html', {'form': form})
+#############################################
+#############################################
+#############################################
 
 
 class Reservation3CreateView(CreateView):
@@ -33,6 +39,9 @@ class Reservation3CreateView(CreateView):
     def form_valid(self, form):
         return super(Reservation3CreateView, self).form_valid(form)
 
+##################################
+##################################
+##################################
 
 def message_to_user(request):
     if request.method == "POST":
@@ -44,3 +53,17 @@ def message_to_user(request):
         form = MessageForm(request)
 
     return render(request, "message_to_user.html", {"form": form})
+
+#############################################
+#############################################
+#############################################
+
+from .forms import BulletinForm
+
+
+def add_bulletin(request):
+    """
+        Dummy view to show the form with layout
+    """
+    form = BulletinForm()
+    return render(request, "bulletin_board/change_bulletin.html", {'form': form})
