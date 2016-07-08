@@ -1,10 +1,12 @@
 todo:
- ☐ Redo the same form with forms.Form and send email
+ ✔ Redo the same form with forms.Form and send email @done(2016-07-08 03:07) @project(todo)
  ✔ Redo the same form with the normal Django form @done(2016-07-08 01:58) @project(todo)
  ✔ Find a way to deal with Boolean Choice with crispy_forms for forms.Models. @done(2016-07-08 01:58) @project(todo)
  ✔ Try with https://github.com/tzangms/django-bootstrap-form @done(2016-07-08 01:58) @project(todo)
  ☐ Add tests
- ☐ Use file uploads
+ ✔ Use file uploads @done(2016-07-08 03:07) @project(todo)
+ ☐ Create a simple html form that I will add the model label and fields into it
+   ☐ https://docs.djangoproject.com/ja/1.9/topics/forms/#building-a-form
 
 crispy_forms:
   ☐ Best choice usually
