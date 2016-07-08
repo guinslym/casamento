@@ -54,6 +54,26 @@ def message_to_user(request):
 
     return render(request, "message_to_user.html", {"form": form})
 
+
+
+class MessageToUserFormView(FormView):
+    from django.conf import settings
+    form_class = MessageForm
+    template_name = 'message_to_user.html'
+    success_url = '/done'
+
+    def form_valid(self, form):
+        message = "{name} / {email} said: ".format(
+            name=form.cleaned_data.get('name'),
+            email=form.cleaned_data.get('email'))
+        message += "\n\n{0}".format(form.cleaned_data.get('message'))
+        send_mail(
+            subject=form.cleaned_data.get('subject').strip(),
+            message=message,
+            from_email='contact-form@f.com',
+            recipient_list=[settings.LIST_OF_EMAIL_RECIPIENTS],
+        )
+        return super(ContactFormView, self).form_valid(form)
 #############################################
 #############################################
 #############################################
