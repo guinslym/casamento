@@ -262,6 +262,9 @@ class BulletinForm(forms.ModelForm):
 from bootstrap3_datetime.widgets import DateTimePicker
 
 class ToDoForm(forms.Form):
+    """
+    This form doesn't have a View nor a urls.py
+    """
     todo = forms.CharField(
         widget=forms.TextInput(attrs={"class": "form-control"}))
     date = forms.DateField(
