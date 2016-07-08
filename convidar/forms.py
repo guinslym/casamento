@@ -227,6 +227,7 @@ class BulletinForm(forms.ModelForm):
         self.fields["bulletin_type"].widget = forms.RadioSelect()
         # delete empty choice for the type
         del self.fields["bulletin_type"].choices[0]
+        #self.fields['bulletin_type'].label = "Bulletin Type"
 
         self.helper.layout = layout.Layout(
             layout.Fieldset(
